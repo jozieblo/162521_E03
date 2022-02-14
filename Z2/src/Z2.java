@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class Z2
@@ -6,6 +7,7 @@ public class Z2
     {
         String[] napis = new String[]{"1","2","3","4","5"};
         Integer[] liczba = new Integer[]{1,2,3,4,5};
+        Iterator iterator = Arrays.stream(liczba).iterator();
         wypisz(napis);
     }
     public static  void wypisz (String tab[])

@@ -4,7 +4,7 @@ public class Z1
     {
         Integer[] liczba1 = new Integer[]{1,2,3};
         Integer[] liczba2 = new Integer[]{3,2,1};
-        System.out.println(palindrom(liczba2));
+        System.out.println(palindrom(liczba1));
 
     }
     public static <T extends Comparable <T>> boolean palindrom (T[] tab)
