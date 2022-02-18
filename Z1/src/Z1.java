@@ -1,23 +1,34 @@
+import java.time.LocalDate;
+import java.util.LinkedList;
+
 public class Z1
 {
     public static void main(String[] args)
     {
-        Integer[] liczba1 = new Integer[]{1,2,3};
-        Integer[] liczba2 = new Integer[]{3,2,1};
-        System.out.println(palindrom(liczba1));
-
+        LinkedList<Integer> liczba = new LinkedList<>();
+        liczba.add(1);
+        liczba.add(2);
+        liczba.add(3);
+        LinkedList<LocalDate> data = new LinkedList<>();
+        data.add(LocalDate.of(10,10,10));
+        data.add(LocalDate.of(11,11,11));
+        data.add(LocalDate.of(12,12,12));
+        data.add(LocalDate.of(13,12,13));
+        redukuj(liczba);
     }
-    public static <T extends Comparable <T>> boolean palindrom (T[] tab)
+    public static <T> void  redukuj(LinkedList<T> tab)
     {
-        int koniec = tab.length-1;
-        for(int i=0;i!=koniec;i++)
+        int n=1; // usuwa n+1 (drugi w tym przypadku) element
+        for(int i=0;i<tab.size()-1;i++)
         {
-            if(tab[i].compareTo(tab[koniec])==0)
+            tab.remove(n);
+            n=n+n;
+            if(n>tab.size())
             {
-                return true;
+                break;
             }
-            koniec--;
         }
-        return false;
+        System.out.print(tab);
     }
+
 }

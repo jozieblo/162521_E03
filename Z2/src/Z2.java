@@ -1,20 +1,48 @@
-import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 
 public class Z2
 {
     public static void main(String[] args)
     {
-        String[] napis = new String[]{"1","2","3","4","5"};
-        Integer[] liczba = new Integer[]{1,2,3,4,5};
-        Iterator iterator = Arrays.stream(liczba).iterator();
-        wypisz(napis);
+        LinkedHashSet<Integer> liczby = new LinkedHashSet<>();
+        liczby.add(1);
+        liczby.add(2);
+        liczby.add(3);
+        LinkedHashSet<String> napis = new LinkedHashSet<>();
+        napis.add("1");
+        napis.add("2");
+        napis.add("3");
+        LinkedHashSet<Character> znak = new LinkedHashSet<>();
+        znak.add('a');
+        znak.add('b');
+        znak.add('c');
+        usuwanie2(liczby);
+        System.out.print(liczby);
+
     }
-    public static  void wypisz (String tab[])
+//    public static <E extends Iterable <?>> void usuwanie(E lista)
+//    {
+//        Iterator iterator = lista.iterator();
+//        while (iterator.hasNext())
+//        {
+//            var poprzedni = iterator.next();
+//            if(!iterator.hasNext())
+//            {
+//                iterator.remove(poprzedni);
+//            }
+//        }
+//    }
+    public static<T> void usuwanie2(LinkedHashSet <T> lista)
     {
-        for(int i=0;i<tab.length;i+=2)
-        {
-            System.out.print(tab[i]+", ");
-        }
+        int licznik =0;
+       for(int i=0;i<lista.size();i++)
+       {
+           licznik++;
+       }
+       int przed = licznik-1;
+       lista.remove(przed);
     }
+
 }

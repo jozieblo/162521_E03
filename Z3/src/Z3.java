@@ -5,14 +5,15 @@ public class Z3
 {
     public static void main(String[] args)
     {
-        String path = "C:\\Users\\jarek\\OneDrive\\Pulpit\\TEST";
-        String [] lista = metoda(path);
-        System.out.println(Arrays.toString(lista));
+        String path="C:\\Users\\jarek\\OneDrive\\Pulpit";
+        String roz = ".png";
+        String[] lista = zwrocBezroz(path,roz);
+        System.out.print(Arrays.toString(lista));
     }
-    public static String[] metoda(String path)
+    public static String[] zwrocBezroz(String path, String roz)
     {
         File file = new File(path);
-        return file.list();
+        return file.list((dir, name) -> !name.endsWith(roz));
 
     }
 }
